@@ -10,6 +10,6 @@ st.title('Analysis of World Cup 2022 in Qatar')
 
 st.text('Available pages')
 
-st.page_link(os.path.join('pages', '1_fifa_page.py'), label='FIFA (game) rating', icon="🎮️")
-st.page_link(os.path.join('pages', '2_fbref_page.py'), label='FBRef player stats', icon="⚽")
-st.page_link(os.path.join('pages', '3_running_page.py'), label='Running (physical) player stats', icon="👟")
+st.page_link(os.path.join('pages', '1_fifa_ratings.py'), label='FIFA (game) rating', icon="🎮️")
+st.page_link(os.path.join('pages', '2_fbref_stats.py'), label='FBRef player stats', icon="⚽")
+st.page_link(os.path.join('pages', '3_running_performance.py'), label='Running (physical) player stats', icon="👟")
