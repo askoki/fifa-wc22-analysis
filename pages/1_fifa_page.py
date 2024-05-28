@@ -39,3 +39,8 @@ fig, ax = plot_mpl_comparison_radar(
 )
 st.pyplot(fig)
 add_download_image_button(fig, button_text="Download image", filename=f'FIFA_rating_comparison_{player1}_{player2}.png')
+
+st.subheader('Player\'s data')
+fifa_values = ['overall', 'pace', 'shooting', 'passing', 'dribbling', 'defending', 'physic']
+comp_df = df[df.short_name.isin([player1, player2])][['short_name', 'position'] + fifa_values]
+st.dataframe(comp_df)
