@@ -1,9 +1,9 @@
 import streamlit as st
 import os
 import pandas as pd
-from pages.helpers.plotting import create_mpl_radar_color, plot_mpl_comparison_radar
+from pages.helpers.plotting import plot_mpl_comparison_radar, FIFA_COLOR_DICT
 from pages.helpers.utils import add_page_logo, add_sidebar_logo, add_download_image_button
-from settings import DATA_DIR, SB_GRAY, SB_RED, SB_LIGHT_BLUE
+from settings import DATA_DIR
 
 add_page_logo()
 add_sidebar_logo()
@@ -32,17 +32,10 @@ bound_high = [100 for _ in range(len(values2))]
 round_int = [True for _ in range(len(values2))]
 labels = [s.capitalize() for s in fifa_overall_values]
 
-colors = {
-    'rings_inner': create_mpl_radar_color(facecolor=SB_GRAY, edgecolor=SB_GRAY),
-    'radar1': create_mpl_radar_color(facecolor=SB_RED, edgecolor=SB_RED),
-    'radar2': create_mpl_radar_color(facecolor=SB_LIGHT_BLUE, edgecolor=SB_LIGHT_BLUE),
-}
-
 fig, ax = plot_mpl_comparison_radar(
     values1, values2, labels,
     bound_low=bound_low, bound_high=bound_high,
-    colors=colors, label1=player1, label2=player2, round_int=[round_int]
+    colors=FIFA_COLOR_DICT, label1=player1, label2=player2, round_int=[round_int]
 )
-ax.legend(ncols=2, fontsize=10, loc='best', bbox_to_anchor=(0, 0., 1, 1.15))
 st.pyplot(fig)
 add_download_image_button(fig, button_text="Download image", filename=f'FIFA_rating_comparison_{player1}_{player2}.png')

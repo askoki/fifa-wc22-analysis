@@ -6,6 +6,7 @@ RadarColors = TypedDict(
     'RadarColors', {
         'facecolor': str,
         'edgecolor': str,
+        'hatch': str or None,
     }
 )
 
