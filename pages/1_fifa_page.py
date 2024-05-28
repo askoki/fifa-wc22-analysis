@@ -2,7 +2,7 @@ import streamlit as st
 import os
 import pandas as pd
 from pages.helpers.plotting import create_mpl_radar_color, plot_mpl_comparison_radar
-from pages.helpers.utils import add_page_logo, add_sidebar_logo
+from pages.helpers.utils import add_page_logo, add_sidebar_logo, add_download_image_button
 from settings import DATA_DIR, SB_GRAY, SB_RED, SB_LIGHT_BLUE
 
 add_page_logo()
@@ -45,3 +45,4 @@ fig, ax = plot_mpl_comparison_radar(
 )
 ax.legend(ncols=2, fontsize=10, loc='best', bbox_to_anchor=(0, 0., 0.95, 1.1))
 st.pyplot(fig)
+add_download_image_button(fig, button_text="Download image", filename=f'FIFA_rating_comparison_{player1}_{player2}.png')
