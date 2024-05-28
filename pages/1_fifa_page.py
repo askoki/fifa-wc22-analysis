@@ -43,6 +43,6 @@ fig, ax = plot_mpl_comparison_radar(
     bound_low=bound_low, bound_high=bound_high,
     colors=colors, label1=player1, label2=player2, round_int=[round_int]
 )
-ax.legend(ncols=2, fontsize=10, loc='best', bbox_to_anchor=(0, 0., 0.95, 1.1))
+ax.legend(ncols=2, fontsize=10, loc='best', bbox_to_anchor=(0, 0., 1, 1.15))
 st.pyplot(fig)
 add_download_image_button(fig, button_text="Download image", filename=f'FIFA_rating_comparison_{player1}_{player2}.png')

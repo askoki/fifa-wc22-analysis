@@ -26,7 +26,7 @@ def plot_mpl_comparison_radar(
     )
     fig, axs = grid(
         figheight=4,
-        grid_height=0.91,
+        grid_height=0.8,
         title_height=0.06,
         endnote_height=0.025,
         title_space=0,
