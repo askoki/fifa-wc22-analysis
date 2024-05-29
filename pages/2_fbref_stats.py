@@ -27,8 +27,6 @@ country2_players = df[df.team == player2_country].player.unique().tolist()
 default_player2 = country1_players.index('Marko Livaja')
 player2 = st.selectbox('Select player 2', country2_players, index=default_player2)
 
-
-
 playing_positions = df.position.unique().tolist()
 player1_position = df[df.player == player1].iloc[0].squeeze().position
 default_position = playing_positions.index(player1_position)
