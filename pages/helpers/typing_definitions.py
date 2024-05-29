@@ -3,6 +3,7 @@ from typing import Tuple, TypedDict
 from matplotlib import pyplot as plt
 
 FBREF_PLOT_ITEM = Tuple[str, str, bool]
+RUNNING_PLOT_ITEM = Tuple[str, str]
 
 RadarColors = TypedDict(
     'RadarColors', {

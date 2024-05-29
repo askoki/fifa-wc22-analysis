@@ -1,7 +1,7 @@
 import os
 from typing import List
 
-from pages.helpers.typing_definitions import FBREF_PLOT_ITEM
+from pages.helpers.typing_definitions import FBREF_PLOT_ITEM, RUNNING_PLOT_ITEM
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(ROOT_DIR, 'data')
@@ -20,6 +20,11 @@ TEAL = '#6ec4d6'
 
 ROBOTO_THIN = os.path.join(FONTS_DIR, 'Roboto-Thin.ttf')
 ROBOTO_BOLD = os.path.join(FONTS_DIR, 'RobotoSlab.ttf')
+
+RUNNING_STATS: List[RUNNING_PLOT_ITEM] = [
+    ('TD', 'TD(m)'), ('Z1D', 'Z1D(m)'), ('Z2D', 'Z2D(m)'), ('Z3D', 'Z3D(m)'), ('Z4D', 'Z4D(m)'),
+    ('Z5D', 'Z5D(m)'), ('HSR_count', 'High-Speed Runs'), ('sprint_count', 'Sprints'), ('max_speed', 'Max speed (km/h)')
+]
 
 FBREF_ATT_STATS: List[FBREF_PLOT_ITEM] = [
     ('goals_pens', 'npG', True),
