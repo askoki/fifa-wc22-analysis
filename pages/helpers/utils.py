@@ -24,7 +24,7 @@ def add_download_image_button(fig: plt.Figure, button_text: str, filename: str, 
 def add_page_logo():
     img = Image.open('2022_FIFA_World_Cup_logo.png')
     st.set_page_config(
-        page_title="FIFA World Cuo 2022",
+        page_title="FIFA World Cup 2022",
         page_icon=img
     )
 
