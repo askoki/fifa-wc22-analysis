@@ -9,7 +9,7 @@ from settings import DATA_DIR, RUNNING_STATS
 add_page_logo()
 add_sidebar_logo()
 
-st.title('Running stats dataset for WC 2022')
+st.title('Running performance')
 
 df = pd.read_csv(os.path.join(DATA_DIR, 'running_aggregated_dataset.csv'))
 

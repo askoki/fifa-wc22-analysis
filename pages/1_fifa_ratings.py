@@ -8,7 +8,7 @@ from settings import DATA_DIR
 add_page_logo()
 add_sidebar_logo()
 
-st.title('FIFA football game dataset for WC 2022')
+st.title('FIFA football game')
 
 df = pd.read_csv(os.path.join(DATA_DIR, 'fifa_players_22.csv'))
 

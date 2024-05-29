@@ -11,7 +11,7 @@ from settings import DATA_DIR, FBREF_ATT_STATS, FBREF_TEC_PHY_STATS
 add_page_logo()
 add_sidebar_logo()
 
-st.title('FBRef dataset for WC 2022')
+st.title('FBRef performance')
 
 df = pd.read_csv(os.path.join(DATA_DIR, 'fbref_dataset_cleaned.csv'))
 
