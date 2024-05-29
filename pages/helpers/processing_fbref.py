@@ -72,4 +72,4 @@ def prepare_fbref_df_for_plotting(df: pd.DataFrame, player1_name: str, player2_n
     bound_high = p1_df.ub.tolist()
     round_int = [False for _ in range(len(bound_low))]
     labels = p1_df.label.tolist()
-    return values1, values2, round_int, labels, bound_low, bound_high
+    return values1, values2, round_int, labels, bound_low, bound_high, pd.concat([p1_df, p2_df])

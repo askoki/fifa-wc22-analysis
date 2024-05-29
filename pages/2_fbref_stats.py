@@ -5,7 +5,7 @@ import streamlit as st
 
 from pages.helpers.plotting import plot_mpl_comparison_radar, FBREF_COLOR_DICT
 from pages.helpers.processing_fbref import prepare_fbref_df_for_plotting
-from pages.helpers.utils import add_page_logo, add_sidebar_logo
+from pages.helpers.utils import add_page_logo, add_sidebar_logo, add_expander_toggle
 from settings import DATA_DIR, FBREF_ATT_STATS, FBREF_TEC_PHY_STATS
 
 add_page_logo()
@@ -37,7 +37,7 @@ playing_position = st.selectbox(
 )
 
 st.header('Attacking stats')
-values1, values2, round_int, labels, bl, bh = prepare_fbref_df_for_plotting(
+values1, values2, round_int, labels, bl, bh, att_comp_df = prepare_fbref_df_for_plotting(
     df, player1_name=player1, player2_name=player2, position=playing_position, stats_list=FBREF_ATT_STATS
 )
 fig, ax = plot_mpl_comparison_radar(
@@ -47,11 +47,12 @@ fig, ax = plot_mpl_comparison_radar(
     num_rings=6
 )
 st.pyplot(fig)
+add_expander_toggle(button_text='Click for viewing table data', df=att_comp_df)
 
 st.divider()
 
 st.header('Tactical, passing and physical stats')
-tac_values1, tac_values2, tac_round_int, tac_labels, tac_bl, tac_bh = prepare_fbref_df_for_plotting(
+tac_values1, tac_values2, tac_round_int, tac_labels, tac_bl, tac_bh, tac_comp_df = prepare_fbref_df_for_plotting(
     df, player1_name=player1, player2_name=player2, position=playing_position, stats_list=FBREF_TEC_PHY_STATS
 )
 fig2, ax2 = plot_mpl_comparison_radar(
@@ -61,3 +62,4 @@ fig2, ax2 = plot_mpl_comparison_radar(
     num_rings=6
 )
 st.pyplot(fig2)
+add_expander_toggle(button_text='Click for viewing table data', df=tac_comp_df)
