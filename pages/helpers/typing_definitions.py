@@ -2,6 +2,8 @@ from typing import Tuple, TypedDict
 
 from matplotlib import pyplot as plt
 
+FBREF_PLOT_ITEM = Tuple[str, str, bool]
+
 RadarColors = TypedDict(
     'RadarColors', {
         'facecolor': str,
