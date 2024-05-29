@@ -27,7 +27,7 @@ FBREF_COLOR_DICT = {
 }
 
 RUNNING_COLOR_DICT = {
-    'rings_inner': create_mpl_radar_color(facecolor=SB_GRAY, edgecolor='gray', hatch='O'),
+    'rings_inner': create_mpl_radar_color(facecolor=SB_GRAY, edgecolor='lightgray', hatch='..'),
     'radar1': create_mpl_radar_color(facecolor=PINK, edgecolor=DARK_RED),
     'radar2': create_mpl_radar_color(facecolor=TEAL, edgecolor=DARK_BLUE),
 }
