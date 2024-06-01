@@ -1,3 +1,4 @@
+import json
 import os
 
 import pandas as pd
@@ -62,3 +63,9 @@ fig2, ax2 = plot_mpl_comparison_radar(
 )
 st.pyplot(fig2)
 add_expander_toggle(button_text='Click for viewing table data', df=tac_comp_df)
+
+st.subheader('Metrics explanation')
+
+with open(os.path.join(DATA_DIR, 'fbref_data_description.json'), 'r') as j:
+    description_json = json.loads(j.read())
+st.json(description_json)
