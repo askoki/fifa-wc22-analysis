@@ -1,4 +1,5 @@
 import io
+import os
 
 import pandas as pd
 import streamlit as st
@@ -7,6 +8,7 @@ from PIL import Image
 from random import choice
 from string import ascii_letters, digits, punctuation
 from matplotlib.backends.backend_pdf import PdfPages
+from st_pages import show_pages, Page
 
 
 def add_download_image_button(fig: plt.Figure, button_text: str, filename: str, bbox_inches=None):
@@ -46,6 +48,17 @@ def add_sidebar_logo():
     )
     st.sidebar.image(image=img)
     st.sidebar.title('WC 2022 Analytics')
+
+
+def add_pages_to_sidebar():
+    show_pages(
+        [
+            Page(os.path.join('homepage.py'), 'Home', '🏠'),
+            Page(os.path.join('pages', '1_fifa_ratings.py'), 'FIFA ratings', '🎮'),
+            Page(os.path.join('pages', '2_fbref_stats.py'), 'FBRef stats', '⚽'),
+            Page(os.path.join('pages', '3_running_performance.py'), 'Running performance', '👟'),
+        ]
+    )
 
 
 def add_download_pdf_from_plots_button(button_text: str, filename: str):

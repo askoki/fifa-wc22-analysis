@@ -5,11 +5,12 @@ import streamlit as st
 
 from pages.helpers.plotting import plot_mpl_comparison_radar, FBREF_COLOR_DICT
 from pages.helpers.processing_fbref import prepare_fbref_df_for_plotting
-from pages.helpers.utils import add_page_logo, add_sidebar_logo, add_expander_toggle
+from pages.helpers.utils import add_page_logo, add_sidebar_logo, add_expander_toggle, add_pages_to_sidebar
 from settings import DATA_DIR, FBREF_ATT_STATS, FBREF_TEC_PHY_STATS
 
 add_page_logo()
 add_sidebar_logo()
+add_pages_to_sidebar()
 
 st.title('FBRef performance')
 

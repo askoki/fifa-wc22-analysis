@@ -3,11 +3,12 @@ import pandas as pd
 import streamlit as st
 from pages.helpers.plotting import plot_mpl_comparison_radar, RUNNING_COLOR_DICT
 from pages.helpers.processing_running import prepare_running_df_for_plotting
-from pages.helpers.utils import add_page_logo, add_sidebar_logo, add_expander_toggle
+from pages.helpers.utils import add_page_logo, add_sidebar_logo, add_expander_toggle, add_pages_to_sidebar
 from settings import DATA_DIR, RUNNING_STATS
 
 add_page_logo()
 add_sidebar_logo()
+add_pages_to_sidebar()
 
 st.title('Running performance')
 

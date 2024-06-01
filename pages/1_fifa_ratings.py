@@ -2,11 +2,12 @@ import streamlit as st
 import os
 import pandas as pd
 from pages.helpers.plotting import plot_mpl_comparison_radar, FIFA_COLOR_DICT
-from pages.helpers.utils import add_page_logo, add_sidebar_logo, add_download_image_button
+from pages.helpers.utils import add_page_logo, add_sidebar_logo, add_download_image_button, add_pages_to_sidebar
 from settings import DATA_DIR
 
 add_page_logo()
 add_sidebar_logo()
+add_pages_to_sidebar()
 
 st.title('FIFA football game')
 
