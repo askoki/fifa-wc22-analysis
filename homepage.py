@@ -8,8 +8,18 @@ add_sidebar_logo()
 
 st.title('Analysis of World Cup 2022 in Qatar')
 
-st.text('Available pages')
+st.header('Available pages', divider='gray')
 
-st.page_link(os.path.join('pages', '1_fifa_ratings.py'), label='FIFA (game) rating', icon="🎮️")
-st.page_link(os.path.join('pages', '2_fbref_stats.py'), label='FBRef player stats', icon="⚽")
-st.page_link(os.path.join('pages', '3_running_performance.py'), label='Running (physical) player stats', icon="👟")
+st.subheader('FIFA (game) rating')
+st.page_link(os.path.join('pages', '1_fifa_ratings.py'), label='Visit page', icon="🎮️")
+st.page_link('https://www.kaggle.com/datasets/stefanoleone992/fifa-22-complete-player-dataset', label='Data source', icon="💾")
+st.divider()
+
+st.subheader('FBRef player stats')
+st.page_link(os.path.join('pages', '2_fbref_stats.py'), label='Visit site', icon="⚽")
+st.page_link('https://www.kaggle.com/datasets/swaptr/fifa-world-cup-2022-player-data', label='Data source', icon="💾")
+st.divider()
+
+st.subheader('Running (physical) player stats')
+st.page_link(os.path.join('pages', '3_running_performance.py'), label='Visit site', icon="👟")
+st.page_link('https://www.fifatrainingcentre.com/en/fwc2022/post-match-summaries/post-match-summary-reports.php', label='Data source', icon="💾")
