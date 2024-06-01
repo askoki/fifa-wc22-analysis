@@ -44,3 +44,15 @@ fig, ax = plot_mpl_comparison_radar(
 )
 st.pyplot(fig)
 add_expander_toggle(button_text='Click for viewing table data', df=run_comp_df)
+
+st.subheader('Metrics explanation')
+st.json({
+    'TD': 'Total Distance (m)',
+    'Z1D': 'Distance Zone 1: 0-7 km/h',
+    'Z2D': 'Distance Zone 2: 7-15 km/h',
+    'Z3D': 'Distance Zone 3: 15-20 km/h',
+    'Z4D': 'Distance Zone 4: 20-25 km/h',
+    'Z5D': 'Distance Zone 5: 25+ km/h',
+    'High-Speed Runs': 'Runs above 15 km/h',
+    'Sprints': 'Runs above 20 km/h',
+})
