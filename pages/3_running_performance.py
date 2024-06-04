@@ -18,12 +18,18 @@ countries = df.team.unique().tolist()
 default_country = countries.index('Croatia')
 player1_country = st.selectbox('Select player 1 country', countries, index=default_country)
 country1_players = df[df.team == player1_country].player.unique().tolist()
-default_player1 = country1_players.index('PETKOVIC BRUNO')
+try:
+    default_player1 = country1_players.index('PETKOVIC BRUNO')
+except ValueError:
+    default_player1 = 0
 player1 = st.selectbox('Select player 1', country1_players, index=default_player1)
 
 player2_country = st.selectbox('Select player 2 country', countries, index=default_country)
 country2_players = df[df.team == player2_country].player.unique().tolist()
-default_player2 = country1_players.index('LIVAJA MARKO')
+try:
+    default_player2 = country1_players.index('LIVAJA MARKO')
+except ValueError:
+    default_player2 = 0
 player2 = st.selectbox('Select player 2', country2_players, index=default_player2)
 
 playing_positions = df.position.unique().tolist()
